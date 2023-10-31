@@ -1,0 +1,870 @@
+html {
+    transition: background-color 0.5s ease;
+}
+
+body {
+    background-color: #000000;
+    transition: color 0.8s ease;
+}
+
+button {
+    transition: border-color 0.8s ease;
+}
+
+.navbar {
+    background-color: #404258;
+}
+
+/* ----Social media share icons------ */
+
+.social-share-icons {
+    position: fixed;
+    right: 0.6rem;
+}
+
+.share-socials {
+    display: block;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.7rem;
+    text-align: center;
+    text-decoration: none;
+    margin: 1px 7px;
+    position: relative;
+    bottom: 9rem;
+}
+
+/* ------RELATED POSt------------ */
+
+.related-post-tag {
+    color: #865dff;
+}
+
+.related-post-flex-style {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+}
+
+.related-post-home-div {
+    background-color: #e3dffd;
+    margin: 0;
+    padding: 0;
+    margin-right: 40px;
+    width: calc(30% - 17px);
+    margin-bottom: 56px;
+    height: 25%;
+    border-radius: 10px;
+    box-shadow: 0 0 36px rgba(0, 0, 0, 0.3);
+}
+
+.related-post-img {
+    height: auto;
+    overflow: hidden;
+}
+
+.related-post-img.horizontal-related-img {
+    max-width: 100%;
+}
+
+.related-post-img.vertical-related-img {
+    max-width: 36%;
+}
+
+.related-post-img:hover {
+    transform: scale(1.02);
+}
+
+.related-home-title {
+    color: #404258;
+    font-size: 1.4rem;
+}
+
+.related-home-desc {
+    color: #404258;
+    font-size: 1.33rem;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+/* -----Blinking Js feature ------------ */
+
+.post-container,
+.image-container {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.9s ease, transform 1s ease;
+}
+
+.post-container.active,
+.image-container.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* -------ALL Images feature------ */
+
+.img-border-shadow {
+    box-shadow: 0 0 53px 0 rgba(0, 0, 0, 0.3);
+}
+
+.post-images {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.post-images.horizontal {
+    width: 40%;
+}
+
+.post-images.vertical {
+    max-width: 26%;
+}
+
+.post-images:hover {
+    transform: scale(1.02);
+}
+
+/* --------Back to Top Arrow ⬆️------------ */
+
+.back-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    font-size: 25px;
+    color: #fff;
+    background-color: #6b728e;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+
+.back-to-top:hover {
+    opacity: 0.8;
+}
+
+/* --------Progress Bar ----------- */
+
+#progress-bar-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: transparent;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #fff;
+    z-index: 9999;
+    transition: width 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.fa-sun {
+    color: navy;
+    font-size: 1.4rem;
+    padding: 3.5px;
+    border-radius: 50%;
+}
+
+/* ----------HEADER----------- */
+
+.btn-close-white {
+    background-color: white;
+}
+
+#site-header {
+    padding-bottom: 4em;
+}
+
+.navbar-brand {
+    font-family: cursive;
+    color: #116d6e;
+    font-size: 1.3rem;
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #03001c;
+    margin-right: 1.5rem;
+}
+
+.navbar {
+    color: #c147e9;
+    background-color: #c147e9;
+    border: 0;
+    border-radius: 0;
+    font-size: 20px;
+    box-shadow: 0 0 55px 0 rgba(0, 0, 0, 0.3);
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+
+.navbar-nav li a:hover {
+    color: #c400ff !important;
+}
+
+.navbar-brand:hover {
+    background-color: #16ff00;
+}
+
+/* -------FOOTER--------*/
+
+.bottom-container {
+    margin: 0 auto;
+    background-color: #c47aff;
+    padding: 1rem 8rem 1rem;
+}
+
+.footer {
+    color: #fff;
+    padding-top: 1%;
+    font-size: 1.36rem;
+    text-align: center;
+}
+
+.my-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* ----HOME PAGE------- */
+
+.display-block-home {
+    display: block;
+}
+
+.home-div-anchor {
+    text-decoration: none;
+    color: #404258;
+}
+
+.home-media-div {
+    max-width: 95%;
+    margin-top: 4rem;
+    text-align: justify;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.h1-home-welcome {
+    color: #a6a9b6;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 2rem;
+}
+
+.h1-gray {
+    color: #a6a9b6;
+    display: none;
+}
+
+.gray {
+    color: #a6a9b6;
+    font-size: 1.3rem;
+    line-height: 2.1rem;
+    width: 99%;
+}
+
+.c {
+    color: #c147e9;
+}
+
+/* ----for home images-----*/
+
+.home-display-images {
+    height: auto;
+    overflow: hidden;
+}
+
+.home-display-images.horizontal-home-display {
+    max-width: 100%;
+}
+
+.home-display-images.vertical-home-display {
+    max-width: 36%;
+}
+
+.home-display-images:hover {
+    transform: scale(1.03);
+}
+
+.home-div {
+    width: calc(36% - 12px);
+    margin: 0;
+    padding: 0;
+    margin-bottom: 60px;
+    background-color: #e3dffd;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    height: 30%;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.homepage-photo {
+    box-shadow: 0 10px 55px 0 rgba(0, 0, 0, 0.3);
+}
+
+.read-more {
+    color: #9c19e0;
+    font-weight: bold;
+}
+
+.home-h2-title {
+    color: #404258;
+    font-size: 1.5rem;
+}
+
+.home-p {
+    color: #404258;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 1.4rem;
+}
+
+/* -----POST PAGE------- */
+
+.prakhar-em {
+    color: #00adb5;
+}
+
+.author-img {
+    width: 78px;
+    margin-right: 1.3rem;
+    float: left;
+}
+
+.author-img-box {
+    width: 70px;
+    float: left;
+    margin-right: 1.1rem;
+}
+
+.name-p {
+    display: inline;
+    font-size: 1.2rem;
+    color: #a6a9b6;
+}
+
+.post_h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    padding: 0;
+    color: #a460ed;
+    width: 95%;
+    line-height: 55px;
+}
+
+.narrow-post-p {
+    font-size: 1.3rem;
+    line-height: 2.1rem;
+    width: 95%;
+    color: #fff;
+}
+
+.post-p {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 39px;
+    letter-spacing: 1px;
+    color: #a6a9b6;
+}
+
+.user-feedback-in-post {
+    color: #c147e9;
+}
+
+/* ---------COMPOSE PAGE--------- */
+
+.compose_label {
+    font-size: 1.3rem;
+    color: #c147e9;
+    font-weight: bold;
+}
+
+.compose-h1 {
+    color: #c147e9;
+    font-family: cursive;
+}
+
+/* --------DELETE PAGE-------------- */
+
+.delete-h1 {
+    color: #ffbf00;
+    text-align: center;
+}
+
+.delete-anchor {
+    text-decoration: none;
+    color: #fff;
+}
+
+.delete-form-div {
+    background-color: #ba94d1;
+    width: 50%;
+}
+
+/*--------ABOUT SECTION------- */
+
+.about {
+    color: #7fe9de;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.about-h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
+.game-p-about {
+    color: #c400ff;
+}
+
+.dog-dating-color {
+    color: #ff00e4;
+    font-size: 1.5rem;
+}
+
+.about-game-photo-anchor {
+    text-decoration: none;
+}
+
+/* ------CONTACT SECTION------ */
+
+.contact-me-img {
+    width: 50%;
+    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.3);
+}
+
+.follow-me {
+    color: #a6a9b6;
+}
+
+.form-heading {
+    width: 89%;
+    color: #c9ccd5;
+}
+
+.message-sent {
+    display: none;
+    padding: 24px;
+    background-color: lightgreen;
+    color: green;
+    border-radius: 15px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.message-p {
+    font-size: 1.4rem;
+}
+
+.envelope-contact {
+    color: #7de5ed;
+}
+
+.tweet :hover {
+    color: #19a7ce;
+}
+
+.insta :hover {
+    color: #e11d74;
+}
+
+.linkd :hover {
+    color: #04009a;
+}
+
+.fb :hover {
+    color: #009eff;
+}
+
+.whatsapp-share :hover {
+    color: #16ff00;
+}
+
+.github :hover {
+    color: #fff;
+}
+
+.info-icon {
+    color: grey;
+    margin: 10px 16px;
+    font-size: 1.68rem;
+}
+
+.footer-info-icon {
+    color: #6b728e;
+    font-size: 1.4rem;
+}
+
+.anchor-icon :hover {
+    transform: scale(1.2);
+}
+
+.success-fail-footer {
+    font-size: 3rem;
+}
+
+/* ------About Media Query--------- */
+
+@media screen and (max-width: 989px) {
+
+    /* ----CONTACT PAGE---- */
+
+    .dog-dating-color {
+        font-size: 2.5rem;
+    }
+
+    .compose_label {
+        font-size: 2.7rem;
+    }
+
+    .contact-me-img {
+        width: 50%;
+    }
+
+    .contact-mobile-version {
+        padding: auto;
+    }
+
+    .contact-form {
+        margin-left: 1.22rem;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+
+    .form-group {
+        font-size: 8rem;
+    }
+
+    .form-control {
+        font-size: 2.4rem;
+    }
+
+    .form-heading {
+        max-width: 100%;
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        font-size: 1.8rem;
+    }
+
+    .follow-me {
+        font-size: 1.9rem;
+    }
+
+    /* -------HOME PAGE------ */
+
+    .container {
+        max-width: 97%;
+    }
+
+    .home-media-div {
+        width: 100%;
+        margin-top: 3rem;
+        text-align: justify;
+    }
+
+    .home-div {
+        width: calc(92% - 15px);
+        margin-bottom: 58px;
+        margin-left: 3rem;
+        height: auto;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .img-border-shadow {
+        box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    /* ---------for home images--------- */
+
+    .home-display-images.horizontal-home-display {
+        max-width: 100%;
+    }
+
+    .home-display-images.vertical-home-display {
+        max-width: 46%;
+    }
+
+    .gray {
+        max-width: 100%;
+    }
+
+    .c {
+        margin-top: 5px;
+        font-size: 2.4rem;
+    }
+
+    .home-h2-title {
+        font-size: 2.5rem;
+    }
+
+    .home-p {
+        color: #404258;
+        font-size: 2.2rem;
+    }
+
+    .h1-home-welcome {
+        font-size: 2.7rem;
+    }
+
+    .home-desc-mobile-version {
+        font-size: 2.5rem;
+        line-height: 62px;
+    }
+
+    /* ---------POST PAGE--------- */
+
+    .post_h1 {
+        max-width: 100%;
+        font-size: 2.9rem;
+    }
+
+    /* ------------ABOUT------- */
+
+    .post-div {
+        color: #404258;
+    }
+
+    .post-p {
+        width: 99.60%;
+        font-size: 2.92rem;
+        line-height: 80px;
+        letter-spacing: 1.9px;
+    }
+
+    .about-h1 {
+        font-size: 3.3rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    .narrow-post-p {
+        font-size: 3rem;
+        line-height: 2.42rem;
+    }
+
+    .about-mobile-version {
+        max-width: 99.7%;
+    }
+
+    .name-p {
+        font-size: 2.5rem;
+    }
+
+    .author-img {
+        width: 160px;
+    }
+
+    .author-img-box {
+        width: 73px;
+    }
+
+    .author-detail-post-mobile {
+        font-size: 2rem;
+    }
+
+    .user-feedback-in-post {
+        font-size: 2.83rem;
+        line-height: 75px;
+    }
+
+    .btn-message-me-post-page-mobile {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    /* ----Header.ejs----------- */
+
+    #site-header {
+        margin-bottom: 7rem;
+    }
+
+    .navbar-brand {
+        font-weight: bold;
+        font-size: 2.2rem;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+            "Lucida Sans", Arial, sans-serif;
+    }
+
+    .nav-link {
+        font-weight: bold;
+        font-size: 1.9rem;
+    }
+
+    .hamburger-pointer {
+        font-size: 3.6rem;
+        color: #16ff00;
+    }
+
+    /* --Progress Bar------- */
+
+    #progress-bar-container {
+        height: 19px;
+    }
+
+    /* -------Top ⬆️----------- */
+    .back-to-top {
+        bottom: 36px;
+        right: 10px;
+        font-size: 55px;
+        border-radius: 27%;
+        width: 82px;
+        height: 82px;
+        /* line-height: 80px; */
+        text-decoration: none;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    /* ------ALL images feature in mobile version------ */
+
+    /* -------for each post images--------- */
+
+    .post-images.horizontal {
+        width: 94%;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .post-images.vertical {
+        max-width: 80%;
+    }
+
+    /* ------------RELATED POSTS ------- */
+
+    .related-post-home-div {
+        margin-bottom: 83px;
+        width: 415px;
+        height: 32%;
+    }
+
+    .related-post-img.horizontal-related-img {
+        max-width: 100%;
+    }
+
+    .related-post-img.vertical-related-img {
+        max-width: 50%;
+    }
+
+    .related-home-title {
+        font-size: 2.27rem;
+    }
+
+    .related-home-desc {
+        font-size: 2.1rem;
+    }
+
+    .related-post-tag {
+        font-size: 2.7rem;
+        color: #00adb5;
+    }
+
+    /* ------SOCIAL -SHARE- ICONS-------- */
+
+    .share-socials {
+        display: inline-block;
+        font-size: 4rem;
+        margin: 0 19px;
+        position: relative;
+        bottom: 1px;
+    }
+
+    .social-share-icons {
+        position: relative;
+    }
+
+    .h1-gray {
+        margin-top: 1rem;
+        font-size: 2rem;
+        display: block;
+    }
+
+    .info-icon {
+        font-size: 3.9rem;
+        margin: 20px 20px;
+    }
+
+    .footer-info-icon {
+        color: grey;
+        font-size: 3.2rem;
+    }
+
+    .anchor-icon :hover {
+        transform: scale(1.3);
+    }
+
+    .social-dist-contact {
+        margin-right: 3rem;
+        margin-left: 1rem;
+    }
+
+    .fa-sun {
+        font-size: 3.8rem;
+        padding: 5px;
+    }
+
+    /* ------FOOTER - MOBILE- VIEWPORT ----- */
+
+    .bottom-container {
+        margin-top: 1.5rem;
+        padding: 13px 6rem 13px;
+    }
+
+    .footer p {
+        margin-top: 1.5rem;
+        font-size: 2.4rem;
+    }
+
+    .message-sent {
+        display: none;
+        padding: 60px;
+        background-color: lightgreen;
+        color: green;
+        border-radius: 20px;
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    .message-p {
+        font-size: 2.8rem;
+    }
+
+    .send-contact-btn {
+        font-size: 3rem;
+    }
+
+    .msg-sent-author-detial-mobile {
+        display: none;
+    }
+
+    .bottom-container > .footer > a {
+        display: none;
+    }
+}

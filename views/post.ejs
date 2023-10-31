@@ -1,0 +1,119 @@
+<%- include("partials/header"); -%>
+
+<div class="post-div">
+  <br />
+
+  <% blogg_post.forEach(function(post){ %>
+
+  <h1 class="post_h1"><em> <%= post.heading_data %> </em></h1>
+  <br />
+  <br />
+
+  <!-- ⚠️ change the anchor links here  ⚠️ -->
+  <img class="author-img" src="https://prakhar9015.github.io/my-profile/images/prakhar.png" alt="prakhar-img" />
+  <p class="name-p" onmouseover="mouseOver()">
+    By <em class="prakhar-em">Prakhar Rastogi </em>
+  </p>
+  <br />
+  <p class="name-p"><%= post.current_date %></p>
+
+  <br />
+  <br />
+  <br />
+
+  <!----SHARE ICONS ------>
+
+  <p class="h1-gray">share it on 👇</p>
+
+  <!-- ⚠️ change the post share URL here ⚠️ -->
+  <div class="social-share-icons">  
+    <!-- -------------FACEBOOK---------->
+    <a class="share-socials fb anchor-icon" href="https://www.facebook.com/sharer.php?u=https://waistcoat-dugong.cyclic.app/post/<%= post.post_link %>&amp;t=My+Awesome+Blog+Post" target="_blank">
+      <i class="fa-brands fa-facebook info-icon"></i>
+    </a>
+    <!-- Whatsapp -->
+    <a class="share-socials whatsapp-share anchor-icon" href="whatsapp://send?text=Check%20out%20this%20blog%20post:%20https://waistcoat-dugong.cyclic.app/post/<%= post.post_link %>" target="_blank">
+      <i class="fa-brands fa-whatsapp info-icon"></i>
+    </a>
+    <!-- twitter-share -->
+    <a class="share-socials tweet anchor-icon" href="https://twitter.com/intent/tweet?url=https://waistcoat-dugong.cyclic.app/post/<%= post.post_link %>&text=Check%20out%20this%20blog%20post!" target="_blank">
+      <i class="fab fa-twitter info-icon"></i>
+    </a>
+    <!-- linkd-share -->
+    <a class="share-socials linkd anchor-icon" href="https://www.linkedin.com/sharing/share-offsite/?url=https://waistcoat-dugong.cyclic.app/post/<%= post.post_link %>&title=<%= post.heading_data %>&summary=https://waistcoat-dugong.cyclic.app/post/<%= post.img1_data %>&source=https://waistcoat-dugong.cyclic.app/" target="_blank">
+      <i class="fab fa-linkedin info-icon"></i>
+    </a>
+  </div>
+  <br />
+  <br />
+  <br />
+  <img class="image-container img-border-shadow post-images" src="<%= post.img1_data %>" alt="<%= post.img1_alt %>" />
+  <br />
+  <br />
+  <br />
+  <p class="post-container post-p"><%= post.post1_data %></p>
+  <br />
+  <br />
+  <br />
+  <img class="image-container img-border-shadow post-images" src="<%= post.img2_data %>" alt="<%= post.img2_alt %>" />
+  <br />
+  <br />
+  <br />
+  <p class="post-container post-p"><%= post.post2_data %></p>
+  <br />
+  <!--------------3---------------->
+  <br />
+  <br />
+  <img class="image-container img-border-shadow post-images" src="<%= post.img3_data %>" alt="<%= post.img3_alt %>" />
+  <br />
+  <br />
+  <br />
+  <p class="post-container post-p"><%= post.post3_data %></p>
+  <% }) %>
+</div>
+<br />
+<br />
+
+<h4 class="user-feedback-in-post post-container">
+  If you loved reading this post, consider sending me your feedback. So that together we
+  can improve this space 😊
+</h4>
+<form class="" action="/contact#a-contact-form">
+  <button class="btn btn-lg btn-primary btn-message-me-post-page-mobile" type="submit" name="button">
+    <em>feedback</em> 🛩️
+  </button>
+</form>
+<br />
+<br />
+<br />
+
+<!------Related blogs ------->
+
+<h3 class="related-post-tag"><em>May i recommend...</em></h3>
+
+<br />
+<br />
+
+<div class="related-post-flex-style">
+  <% var count = 0; 
+	related_posts.sort(() => Math.random() - 0.5);
+	related_posts.forEach(function(post) { if (count < 4) { %>
+  <a class="home-div-anchor" href="/post/<%= post.post_link  %>">
+    <div class="related-post-home-div">
+      <img class="img-border-shadow related-post-img" src="<%= post.heading_photo %>" alt="<%= post.heading_photo_alt %>" id="example-image" />
+      <br />
+      <br />
+      <h2 class="related-home-title"><%= post.heading_data %></h2>
+      <br />
+      <h4 class="related-home-desc">
+        <em><%= post.post1_data.substring(0, 40) + " ..." %></em>
+        <a class="read-more btn btn-lg btn-info" href="/post/<%= post.post_link %>">read more</a>
+      </h4>
+    </div>
+  </a>
+  <% count++; } }); %>
+</div>
+<br />
+<br />
+
+<%- include("partials/footer"); -%>

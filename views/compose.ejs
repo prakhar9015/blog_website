@@ -1,0 +1,101 @@
+<%- include("partials/header"); -%>
+
+<h1 class="compose-h1">Compose📝</h1>
+<br />
+<form class="" action="" method="post">
+  <!------------->
+
+  <label class="compose_label"><em>Heading Photo</em> </label>
+  <br />
+  <textarea name="title_photo" required rows="2" cols="120"></textarea>
+  <br />
+  <label class="compose_label">Heading photo ALT</label>
+  <input name="title_photo_ALT" />
+  <br />
+  <br />
+  <label class="compose_label"><em>Title</em> </label>
+  <br />
+  <textarea name="title" required rows="2" cols="120"></textarea>
+  <br />
+  <!-----------1---------->
+
+  <label class="compose_label"><em>Image 1</em> </label>
+  <br />
+  <textarea name="img1_link" required rows="2" cols="120"></textarea>
+  <br />
+  <label class="compose_label">Image 1 ALT</label>
+  <input name="img1_ALT" />
+  <br />
+  <br />
+  <label class="compose_label"> <em>Post 1</em> </label>
+  <br />
+  <textarea name="post1_text" required rows="5" cols="120"></textarea>
+  <br />
+  <br />
+
+  <!-------2---------->
+
+  <label class="compose_label"><em>Image 2</em> </label>
+  <br />
+  <textarea name="img2_link" required rows="2" cols="120"></textarea>
+  <br />
+  <label class="compose_label">Image 2 ALT</label>
+  <input name="img2_ALT" />
+  <br />
+  <br />
+  <label class="compose_label"> <em>Post 2</em> </label>
+  <br />
+  <textarea name="post2_text" required rows="5" cols="120"></textarea>
+  <br />
+  <br />
+
+  <!------3---------->
+
+  <label class="compose_label"><em>Image 3</em> </label>
+  <br />
+  <textarea name="img3_link" required rows="2" cols="120"></textarea>
+  <br />
+  <label class="compose_label">Image 3 ALT</label>
+  <input name="img3_ALT" />
+  <br />
+  <br />
+  <label class="compose_label"> <em>Post 3</em> </label>
+  <br />
+  <textarea name="post3_text" required rows="5" cols="120"></textarea>
+  <br />
+  <br />
+
+  <label class="compose_label"> <em>DATE</em> </label>
+  <br />
+  <textarea name="current_DATE" required rows="5" id="fullDATE" cols="3"></textarea>
+  <br />
+  <br />
+  <br />
+
+  <button class="btn btn-lg btn-primary" type="submit" name="button">
+    Publish
+  </button>
+  <br />
+  <br />
+  <br />
+  <br />
+</form>
+
+<script>
+  function getMonthShortName(monthNo) {
+    const date = new Date();
+    date.setMonth(monthNo);
+    return date.toLocaleString("en-US", {
+      month: "long"
+    });
+  }
+  var date = new Date();
+  var year = date.getFullYear(); // 2023
+  var ndate = date.getDate(); // 14
+  var month = date.getMonth();
+
+  document.getElementById("fullDATE").innerHTML =
+    getMonthShortName(month) + " " + ndate + "," + " " + year;
+</script>
+
+<%- include("partials/footer"); -%>

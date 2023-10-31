@@ -1,0 +1,155 @@
+<%- include("partials/header"); -%>
+
+<style>
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .contact-form {
+    max-width: 800px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .textarea-heightt {
+    height: 286px;
+  }
+
+  button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  @media screen and (max-width: 989px) {
+
+    label {
+      font-size: 2rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    .textarea-heightt {
+      width: 105%;
+      padding: 2.1rem 2.4rem;
+    }
+
+    .textarea-heightt {
+      height: 300px;
+    }
+  }
+
+  #submit-button {
+    padding: 10px 20px;
+    background-color: #46c2cb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #submit-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+</style>
+
+<div>
+  <div class="about">
+    <h1 class="about-h1">
+      <strong>Contact Me</strong>
+    </h1>
+    <h2 class="narrow-post-p">
+      <strong>Have questions? or your feedback.</strong>
+    </h2>
+  </div>
+  <br />
+  <br />
+  <img class="responsive-image" src="https://media.istockphoto.com/id/1371726310/vector/vector-illustration-two-astronauts-reaching-to-each-other-in-space-romantic-scene-connection.jpg?s=612x612&w=0&k=20&c=qaNblI7rWxxXS9sOq9m5Jagjbx_08gEIyLecDTEkKCI=" alt="two astronauts trying to contact each other 🧑‍🚀" />
+  <br />
+  <br />
+  <div>
+    <br />
+    <div class="contact-form">
+      <form id="a-contact-form" action="/contact" method="post">
+        <h4 class="form-heading post-container get-in-touch">
+          <em> Let me know what's on your mind. </em>
+        </h4>
+        <br />
+        <br />
+        <div class="form-group post-container">
+          <label for="exampleInputPassword1" class="compose_label"> Name</label>
+          <input type="text" class="form-control input" id="exampleInputPassword1" name="user_name" required placeholder="Enter your Name " />
+        </div>
+        <div class="form-group post-container">
+          <label for="exampleInputEmail1" class="compose_label">Email</label>
+          <input type="email" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" name="user_email" required placeholder="Enter your email" />
+        </div>
+        <div class="form-group post-container">
+          <label for="exampleInputPassword1" class="compose_label">Message <i class="fa-solid fa-envelope envelope-contact"></i></label>
+          <textarea id="exampleInputPassword2" name="user_message" required placeholder="write something..." class="form-control textarea-heightt "></textarea>
+        </div>
+
+        <button class="btn btn-lg btn-info send-contact-btn post-container" type="submit" id="submit-button" name="button">
+          send 🚀
+        </button>
+        <div class="message-sent message-p">
+          Your message is in the air 🍃. Please hold on! 😊
+        </div>
+      </form>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <p class="follow-me">
+    <strong><em>Follow me on </em></strong>👇
+  </p>
+
+  <!-- ⚠️ change the anchor links here  ⚠️ -->
+  <a class="anchor-icon tweet post-container social-dist-contact" href="https://twitter.com/prakhar_hatim"><i class="info-icon fa-brands fa-twitter"></i></a>
+  <a class="anchor-icon insta post-container social-dist-contact" href="https://www.instagram.com/prakhar_9015/"><i class="info-icon fa-brands fa-instagram"></i></a>
+  <a class="anchor-icon linkd post-container social-dist-contact" href="https://www.linkedin.com/in/prakhar-raj-4074ab1b2/"><i class="info-icon fa-brands fa-linkedin"></i></a>
+  <a class="anchor-icon github post-container social-dist-contact " href="https://github.com/prakhar9015"><i class="info-icon fa-brands fa-github git-contact-black"></i></a>
+  
+  <br />
+</div>
+<script>
+  document
+    .getElementById("a-contact-form")
+    .addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("submit-button").innerHTML = "sending...🚀🌍";
+      document.getElementById("submit-button").disabled = true;
+      document.querySelector(".message-sent").style.display = "block";
+      document.getElementById("a-contact-form").submit();
+    });
+</script>
+<br />
+
+<%- include("partials/footer"); -%>

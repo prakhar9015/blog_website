@@ -1,0 +1,50 @@
+<%- include("partials/header"); -%>
+
+<h1 class="delete-h1"><i class="fa-solid fa-triangle-exclamation"></i> Danger Zone</h1>
+<br>
+<% blog_data.forEach(function(atom) {  %>
+<div class="home-div">
+  <h2> <%=  atom.heading_data  %> </h2>
+  <p class="home-p"> <em> id:👉 <%=  atom._id %></em></p>
+  <button type="button" class="btn btn-info btn-lg" name="button"><a class="delete-anchor" href="#deleted-form-down">Take me there</a></button>
+  <hr>
+</div>
+
+<%  });   %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 class="delete-h1"><i class="fa-solid fa-triangle-exclamation"></i> Danger Zone</h1>
+<br>
+<div class="delete-form-div">
+  <form class="" id="deleted-form-down" action="" method="post">
+    <label>
+      <h5> Which blog post you wanna delete?</h5>
+    </label>
+    <br>
+    <input type="" size="70" name="wanna_delete_id" placeholder="Enter the id of the blog post" required value="">
+    <br>
+    <br>
+    <label>
+      <h4> Please think 🤔 💭 twice before deleting. 👈 </h4>
+    </label>
+    <br>
+    <br>
+    <button class="btn btn-lg btn-danger" type="submit" name="button"> Delete </button>
+  </form>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<%- include("partials/footer"); -%>

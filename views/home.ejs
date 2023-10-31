@@ -1,0 +1,41 @@
+<%- include("partials/header"); -%>
+
+<div class="home-media-div">
+  <div class="display-block-home">
+    <h1 class="h1-home-welcome post-container">Welcome to my blogs website</h1>
+    <br />
+    <h2 class="gray home-desc-mobile-version post-container">
+      <em>This is 21st Century and myself prakhar. I believe in the power of
+        technology. with new technology everything is possible. Here every
+        sometimes I post some amazing blogs.
+      </em>
+    </h2>
+    <h4 class="c post-container">
+      <em><strong>Let's begin your journey with me </strong></em>🛩️
+    </h4>
+    <br />
+    <br />
+  </div>
+  <% data.reverse().forEach(function(atom) { %>
+  <a class="home-div-anchor" href="/post/<%= atom.post_link %>">
+    <div class="home-div post-container">
+      <img class="img-border-shadow image-container home-display-images" src="<%= atom.heading_photo %>" alt="<%= atom.heading_photo_alt %>" id="example-image" />
+      <br />
+      <br />
+      <h1 class="home-h2-title post-container"><%= atom.heading_data %></h1>
+      <br />
+      <h3 class="home-p post-container">
+        <em><%= atom.post1_data.substring(0, 70) + " ..." %></em>
+        <a class="read-more btn btn-lg btn-info" href="/post/<%= atom.post_link %>">
+          read more</a>
+      </h3>
+    </div>
+  </a>
+  <% }); %>
+</div>
+<br />
+<br />
+<br />
+<br />
+
+<%- include("partials/footer"); -%>

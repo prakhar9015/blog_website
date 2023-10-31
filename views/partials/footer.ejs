@@ -1,0 +1,237 @@
+</div>
+<div class="bottom-container">
+  <div class="footer">
+
+    <!-- ⚠️ Type your name here ⚠️ -->
+    <p>made with ❤️ by <em> prakhar</em></p> 
+    <p>©️ <span id="footerYear"></span></p>
+
+    <!-- ⚠️ change the anchor links here  ⚠️ -->
+    <a class="anchor-icon tweet post-container social-dist-contact " href="https://twitter.com/prakhar_hatim"><i class="info-icon footer-info-icon  fa-brands fa-twitter"></i></a>
+    <a class="anchor-icon insta post-container social-dist-contact " href="https://www.instagram.com/prakhar_9015/"><i class="info-icon footer-info-icon  fa-brands fa-instagram"></i></a>
+    <a class="anchor-icon linkd post-container social-dist-contact " href="https://www.linkedin.com/in/prakhar-raj-4074ab1b2/"><i class="info-icon footer-info-icon  fa-brands fa-linkedin"></i></a>
+    <a class="anchor-icon github post-container social-dist-contact " href="https://github.com/prakhar9015"><i class="info-icon footer-info-icon  fa-brands fa-github"></i></a>
+  </div>
+</div>
+
+<script>
+  const footerYear = new Date().getFullYear();
+  document.getElementById("footerYear").innerHTML = footerYear;
+  document.querySelector(".message-sent").style.display = "none";
+  function mouseOver() {
+    document.querySelector(".message-sent").style.display = "block";
+  }
+  function mouseOut() {
+    document.querySelector(".message-sent").style.display = "none";
+  }
+
+  // ---------UPSIDE ARROW-----------------------
+  $(document).ready(function() {
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 800) {
+        $(".back-to-top").fadeIn();
+      } else {
+        $(".back-to-top").fadeOut();
+      }
+    });
+    $(".back-to-top").click(function() {
+      $("html, body").animate({
+        scrollTop: 0
+      }, 400);
+      return false;
+    });
+  });
+
+</script>
+<script>
+
+  window.addEventListener("scroll", function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+    const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
+
+    const progressBar = document.getElementById("progress-bar");
+    progressBar.style.width = scrollPercentage + "%";
+
+    const colors = [
+      "#9C19E0",
+    ];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    progressBar.style.backgroundColor = randomColor;
+
+    if (scrollPercentage === 100) {
+      progressBar.style.backgroundColor = "#FF00E4";
+    }
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
+    // Select all images with the "post-images" class
+    $(".post-images").each(function() {
+      var $this = $(this);
+      var img = new Image();
+
+      // When the image is loaded, determine its orientation
+      img.onload = function() {
+        var width = this.width;
+        var height = this.height;
+
+        // Add a class based on the image's orientation
+        if (width > height) {
+          $this.addClass("horizontal");
+        } else {
+          $this.addClass("vertical");
+        }
+      };
+
+      img.src = $this.attr("src");
+    });
+  });
+
+  // --------------for home page ---------------
+  $(document).ready(function() {
+    // Select all images with the "post-images" class
+    $(".home-display-images").each(function() {
+      var $this = $(this);
+      var img = new Image();
+
+      // When the image is loaded, determine its orientation
+      img.onload = function() {
+        var width = this.width;
+        var height = this.height;
+
+        // Add a class based on the image's orientation
+        if (width > height) {
+          $this.addClass("horizontal-home-display");
+        } else {
+          $this.addClass("vertical-home-display");
+        }
+      };
+
+      img.src = $this.attr("src");
+    });
+  });
+  // -------------for related-post-home-div-images--------------
+  $(document).ready(function() {
+    // Select all images with the "post-images" class
+    $(".related-post-img").each(function() {
+      var $this = $(this);
+      var img = new Image();
+
+      // When the image is loaded, determine its orientation
+      img.onload = function() {
+        var width = this.width;
+        var height = this.height;
+
+        // Add a class based on the image's orientation
+        if (width > height) {
+          $this.addClass("horizontal-related-img");
+        } else {
+          $this.addClass("vertical-related-img");
+        }
+      };
+
+      img.src = $this.attr("src");
+    });
+  });
+  // --------------------------LAZY LOADING ----------------------------
+  // function to load posts and images
+  function loadContent() {
+    // get the scroll position and the window height
+    const scrollPosition = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    // get the elements to load
+    const posts = document.querySelectorAll(".post-container");
+    const images = document.querySelectorAll(".image-container");
+    // loop through the posts and load the ones in the viewport
+    for (let i = 0; i < posts.length; i++) {
+      const postPosition = posts[i].offsetTop;
+      if (
+        postPosition < scrollPosition + windowHeight &&
+        !posts[i].classList.contains("active")
+      ) {
+        posts[i].classList.add("active");
+      }
+    }
+    // loop through the images and load the ones in the viewport
+    for (let i = 0; i < images.length; i++) {
+      const imagePosition = images[i].offsetTop;
+      if (
+        imagePosition < scrollPosition + windowHeight &&
+        !images[i].classList.contains("active")
+      ) {
+        images[i].classList.add("active");
+      }
+    }
+  }
+  // load the content on page load
+  loadContent();
+  // load the content again when the user scrolls down
+  window.addEventListener("scroll", loadContent);
+  // reintroduce the feature once the user reaches the top
+  window.addEventListener("scroll", function() {
+    const scrollPosition = window.pageYOffset;
+    if (scrollPosition === 0) {
+      // remove the active class from all posts and images
+      const posts = document.querySelectorAll(".post-container");
+      const images = document.querySelectorAll(".image-container");
+      for (let i = 0; i < posts.length; i++) {
+        posts[i].classList.remove("active");
+      }
+      for (let i = 0; i < images.length; i++) {
+        images[i].classList.remove("active");
+      }
+      // load the content again
+      loadContent();
+    }
+  });
+</script>
+
+<script>
+  const content = document.querySelector("#content_id_to_edit").value;
+</script>
+
+<!----------Light mode - Dark mode----------->
+
+<script>
+  const themeToggle = document.getElementById("theme-toggle");
+  const lightStylesheet = document.getElementById("light-styles");
+  const nightStylesheet = document.getElementById("night-styles");
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+    themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    nightStylesheet.disabled = false;
+    lightStylesheet.disabled = true;
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    lightStylesheet.disabled = false;
+    nightStylesheet.disabled = true;
+  }
+  themeToggle.addEventListener("click", function() {
+    if (document.documentElement.getAttribute("data-theme") === "light") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      localStorage.setItem("theme", "dark");
+      nightStylesheet.disabled = false;
+      lightStylesheet.disabled = true;
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      localStorage.setItem("theme", "light");
+      lightStylesheet.disabled = false;
+      nightStylesheet.disabled = true;
+    }
+  });
+</script>
+
+
+<div id="progress-bar-container">
+  <div id="progress-bar"></div>
+</div>
+
+</body>
+</html>
