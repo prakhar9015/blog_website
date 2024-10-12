@@ -10,7 +10,7 @@ Thankyou Dr. Angela yu for this wonderful project , i am always grateful for it 
 and thanks to all of my friends to making this website better by giving their valuable feedback 😇
 
 <br>
-you can check my final website here 👉 <a href="https://waistcoat-dugong.cyclic.app"> blogsfromheart🎸</a>
+you can check my final website here 👉 <a href="https://little-blog-website.onrender.com"> blogsfromheart🎸</a>
 
 <h3> Here are some glimpse of the final product:  </h3>
 <img src="./public/img/homepage.png" width=800px/>
